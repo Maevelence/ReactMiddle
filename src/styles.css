@@ -1,0 +1,117 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1e1e1f;
+  color: hsl(200, 100%, 90%);
+  max-width: 400px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.new-item-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+
+.btn, button {
+  background: hsl(200, 100%, 50%, 0.1);
+  border: 1px solid hsl(200, 100%, 50%);
+  color: hsl(200, 100%, 50%);
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: hsl(200, 100%, 50%, 0.2);
+}
+
+.btn.btn-danger {
+  background: hsl(0, 100%, 40%, 0.1);
+  border: 1px solid hsl(0, 100%, 40%);
+  color: hsl(0, 100%, 40%);
+}
+
+.btn.btn-danger:hover,
+.btn.btn-danger:focus-visible {
+  background: hsl(0, 100%, 40%, 0.2);
+}
+
+.new-item-form h3 input {
+  outline: none;
+  border: 1px solid hsl(200, 100%, 40%);
+  background: hsl(200, 100%, 30%);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+}
+.new-item-form input::placeholder {
+  color:rgb(16, 0, 161)
+}
+
+.new-item-form input:focus {
+  border: 1px solid hsl(200, 100%, 70%);
+}
+
+.header {
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.active {
+ color: var(--color-active);
+ cursor: default; 
+}
+
+input[type=submit] {
+  width: 55%;
+  margin: 8px 0;
+}
+
+form {
+  flex: auto;
+}
+
+.request { position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: groove;
+  border-radius: 5px;
+  border-color: hsl(200, 100%, 50%);
+  font-style: italic;
+}
+
+.cardDate{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1.2rem;
+  font-weight: inherit;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cardCat {
+  background-color: darkgreen;
+  width: 120px;
+  text-align: center;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  margin: 0.75rem;
+  margin-left: 150px;
+}
