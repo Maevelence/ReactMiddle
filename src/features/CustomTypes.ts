@@ -1,4 +1,4 @@
-export type ReqItem = {
+export type Request = {
     id: number,
     title: string,
     text: string,
@@ -12,8 +12,20 @@ export interface IFormInput {
     category: string
 }
 
+export type User = {
+    email: string,
+    password: string,
+    id: string,
+    token: string
+}
+
+export interface IUser {
+    email: string,
+    password: string
+}
+
 export const currentUrl = new URL(window.location.href).pathname
 
 export const regex = /\d+/
 
-export const editId = Number(currentUrl.match(regex)?.[0])
+

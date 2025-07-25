@@ -9,10 +9,11 @@ import { persistStore,
          PURGE,
          REGISTER
         } from 'redux-persist'
-import itemReducer from './Slice'
-
+import itemReducer from './requestsSlice'
+import userReducer from './usersSlice'
 const rootReducer = combineReducers({
     items: itemReducer,
+    users: userReducer
 })
 const persistConfig = {
   key: 'requests',

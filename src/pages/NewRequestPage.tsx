@@ -1,10 +1,12 @@
-import { NewItemForm } from "../widgets/NewItemForm";
 
-export default function NewRequestPage() {
+import Header from "../shared/Header";
+import { NewRequestForm } from "../widgets/requests/Form";
+export default function NewRequestPage() {  
   
   return (
     <>
-    <NewItemForm />
+    <Header />
+    <NewRequestForm />
     </>
   )
 }

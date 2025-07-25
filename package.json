@@ -22,6 +22,7 @@
     "@wyw-in-js/babel-preset": "^0.6.0",
     "css-in-js": "^1.1.0",
     "dayjs": "^1.11.13",
+    "firebase": "^11.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.57.0",

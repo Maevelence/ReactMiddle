@@ -1,11 +1,11 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
-import {currentUrl, IFormInput, regex} from '../features/CustomTypes'
-import { useAppDispatch} from '../features/Hooks'
-import { addItem, editItem } from '../entities/Slice'
+import {currentUrl, IFormInput, regex} from '../../features/CustomTypes'
+import { useAppDispatch} from '../../features/Hooks'
+import { addRequest, editRequest } from '../../entities/requestsSlice'
 import { useNavigate } from 'react-router-dom'
 import dayjs from 'dayjs'
 
-export function NewItemForm() { 
+export function NewRequestForm() { 
 
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -13,12 +13,12 @@ export function NewItemForm() {
   const editId = Number(currentUrl.match(regex)?.[0])
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     if (!(editId > 0)) {
-      dispatch(addItem(data))
+      dispatch(addRequest(data))
       navigate('/requests')
     }
 
     if (editId) {
-      return  dispatch(editItem({
+      dispatch(editRequest({
         id: editId,
         title: data.title,
         text: data.text,
@@ -32,9 +32,10 @@ export function NewItemForm() {
   return (
     <>
     {editId ? <h2>Изменение заявки</h2> : <h2>Добавление заявки</h2>}
-      <form className="new-item-form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="new-item-form" 
+            onSubmit={handleSubmit(onSubmit)}>
         <h3 className='header'>Название</h3>
-          <input placeholder={"Введите название заявки"} {...register("title", {required: true})} 
+          <input maxLength={21} placeholder={"Введите название заявки"} {...register("title", {required: true})} 
                   aria-invalid={errors.title ? "true" : "false"}/>
           {errors.title?.type === 'required' && <p role='alert'>Название задачи обязательно</p>}
         <h3 className='header'>Описание</h3>

@@ -1,15 +1,17 @@
-import { useEffect } from "react";
-import { ItemList } from "../widgets/ItemList";
-import { useAppSelector } from "../features/Hooks";
+import { ItemList } from "../widgets/requests/ItemList";
+import Header from "../shared/Header";
 
 export default function RequestsPage() {
-  const items = useAppSelector(state => state.items)
-  useEffect(()=>{},[items])
-  return (
+
+
+    return (
     <>
+    <Header />
     <h2>Список заявок</h2>
     <a href="/requests/new"><button className="btn">Добавить заявку в список</button></a>
     <ItemList />
     </>
   )
-}
+  } 
+  
+
